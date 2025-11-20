@@ -1,27 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Couleurs principales -->
-    <color name="blue_light">#A4D7E1</color>
-    <color name="blue">#4A90E2</color>
-    <color name="green">#7ED321</color>
+    <!-- Deep Blue / Ocean Theme -->
+    <color name="water_deep_bg">#001E3C</color> <!-- Dark Blue Background -->
+    <color name="water_surface">#0A1929</color>
 
-    <!-- Couleurs de texte -->
+    <!-- Water Colors -->
+    <color name="blue_light">#4FC3F7</color>
+    <color name="blue">#29B6F6</color>
+    <color name="blue_dark">#0288D1</color>
+    <color name="green">#66BB6A</color> <!-- Tea/Goal Met -->
+    <color name="brown">#8D6E63</color> <!-- Coffee -->
+
+    <!-- Glassmorphism -->
+    <color name="glass_background">#26FFFFFF</color> <!-- 15% White -->
+    <color name="glass_border">#4DFFFFFF</color>     <!-- 30% White -->
+    <color name="glass_text_primary">#FFFFFF</color>
+    <color name="glass_text_secondary">#B3FFFFFF</color>
+
+    <!-- Standard -->
     <color name="white">#FFFFFF</color>
-    <color name="dark_gray">#333333</color>
+    <color name="black">#000000</color>
+    <color name="red">#EF5350</color>
 
-    <!-- Couleurs système -->
+    <!-- Colors for MPAndroidChart -->
+    <color name="chart_water">#29B6F6</color>
+    <color name="chart_tea">#66BB6A</color>
+    <color name="chart_coffee">#8D6E63</color>
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-
-    <!-- Couleurs de statut -->
-    <color name="red">#FF5252</color>
-    <color name="orange">#FFC107</color>
-
-    <!-- Couleurs transparentes -->
-    <color name="white_transparent">#80FFFFFF</color>
-    <color name="blue_transparent">#404A90E2</color>
 </resources>

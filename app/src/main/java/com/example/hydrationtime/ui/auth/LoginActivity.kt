@@ -9,14 +9,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.hydrationtime.databinding.ActivityLoginBinding
 import com.example.hydrationtime.ui.main.MainActivity
 
-/**
- * LoginActivity - Écran de connexion
- * Design basé sur l'image fournie avec fond dégradé bleu
- */
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private val viewModel: AuthViewModel by viewModels()
+
+    // Triple Click Counter
+    private var logoClickCount = 0
+    private var lastClickTime = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,32 +28,43 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setupUI() {
-        // Bouton "Continue" pour se connecter
         binding.btnContinue.setOnClickListener {
             val email = binding.etEmail.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
             viewModel.signIn(email, password)
         }
 
-        // Lien "Sign Up" pour aller vers l'inscription
         binding.tvSignUp.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
         }
 
-        // Le lien "Login" est déjà sur cette page (désactivé)
-        binding.tvLogin.isEnabled = false
-        binding.tvLogin.alpha = 0.5f
+        // --- TRIPLE CLICK FEATURE ---
+        // Clicking the background image 3 times quickly fills credentials
+        binding.backgroundImage.setOnClickListener {
+            val currentTime = System.currentTimeMillis()
+            if (currentTime - lastClickTime < 500) { // 500ms gap allowed
+                logoClickCount++
+            } else {
+                logoClickCount = 1
+            }
+            lastClickTime = currentTime
+
+            if (logoClickCount == 3) {
+                // Auto-fill Magic
+                binding.etEmail.setText("teacher@test.com")
+                binding.etPassword.setText("password123")
+                logoClickCount = 0
+                Toast.makeText(this, "Debug Credentials Filled", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun observeViewModel() {
         viewModel.authState.observe(this) { state ->
             when (state) {
-                is AuthState.Loading -> {
-                    showLoading(true)
-                }
+                is AuthState.Loading -> showLoading(true)
                 is AuthState.Success -> {
                     showLoading(false)
-                    // Connexion réussie -> MainActivity
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
                 }
@@ -61,15 +72,7 @@ class LoginActivity : AppCompatActivity() {
                     showLoading(false)
                     Toast.makeText(this, state.message, Toast.LENGTH_LONG).show()
                 }
-                is AuthState.Idle -> {
-                    showLoading(false)
-                }
-            }
-        }
-
-        viewModel.errorMessage.observe(this) { message ->
-            if (message.isNotBlank()) {
-                Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+                is AuthState.Idle -> showLoading(false)
             }
         }
     }
