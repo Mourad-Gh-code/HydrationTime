@@ -1,8 +1,11 @@
 package com.example.hydrationtime.ui.auth
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -15,12 +18,18 @@ import java.util.*
 /**
  * SignUpActivity - Écran d'inscription
  */
+
+@SuppressLint("CustomSplashScreen")
 class SignUpActivity : AppCompatActivity() {
 
     // [FIX] Changed ActivitySignupBinding to ActivitySignUpBinding
     private lateinit var binding: ActivitySignUpBinding
     private val viewModel: AuthViewModel by viewModels()
     private var selectedBirthdayTimestamp: Long = 0
+
+    // Debug auto-fill feature
+    private var logoClickCount = 0
+    private var lastClickTime = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +42,39 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun setupUI() {
+        // Debug auto-fill: Triple click on logo to auto-fill form
+        binding.logoImageView.setOnClickListener {
+            val currentTime = System.currentTimeMillis()
+            if (currentTime - lastClickTime < 500) { // 500ms gap allowed
+                logoClickCount++
+            } else {
+                logoClickCount = 1
+            }
+            lastClickTime = currentTime
+
+            if (logoClickCount == 3) {
+                // Auto-fill with test data
+                binding.etName.setText("Test User")
+                binding.etEmail.setText("testuser@hydration.com")
+                binding.etPassword.setText("password123")
+                binding.etConfirmPassword.setText("password123")
+
+                // Set birthday to 25 years ago
+                val calendar = Calendar.getInstance()
+                calendar.add(Calendar.YEAR, -25)
+                selectedBirthdayTimestamp = calendar.timeInMillis
+                binding.etBirthday.setText(DateUtils.getDisplayDate(DateUtils.getDateString(selectedBirthdayTimestamp)))
+
+                logoClickCount = 0
+                Toast.makeText(this, "🎉 Debug Mode: Form Auto-Filled!", Toast.LENGTH_SHORT).show()
+
+                // Auto-submit after 1 second
+                Handler(Looper.getMainLooper()).postDelayed({
+                    binding.btnSignUp.performClick()
+                }, 1000)
+            }
+        }
+
         // Sélection de la date de naissance
         binding.etBirthday.setOnClickListener {
             showDatePicker()
@@ -62,6 +104,8 @@ class SignUpActivity : AppCompatActivity() {
         // Lien vers Login
         binding.tvLogin.setOnClickListener {
             finish() // Retour à LoginActivity
+            // Apply reverse slide animation: current screen slides out to right, previous screen slides in from left
+            overridePendingTransition(com.example.hydrationtime.R.anim.slide_in_left, com.example.hydrationtime.R.anim.slide_out_right)
         }
     }
 
@@ -137,4 +181,5 @@ class SignUpActivity : AppCompatActivity() {
         binding.etConfirmPassword.isEnabled = !isLoading
         binding.etBirthday.isEnabled = !isLoading
     }
+
 }

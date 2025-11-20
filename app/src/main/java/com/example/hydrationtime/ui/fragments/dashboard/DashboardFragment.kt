@@ -56,6 +56,7 @@ class DashboardFragment : Fragment(), SensorEventListener {
 
         // 3. FAB Logic
         binding.fabMain.setOnClickListener { toggleFabMenu() }
+        binding.fabGlass.setOnClickListener { addWater(200f); toggleFabMenu() }
         binding.fabCup.setOnClickListener { addWater(250f); toggleFabMenu() }
         binding.fabBottle.setOnClickListener { addWater(500f); toggleFabMenu() }
 
@@ -73,12 +74,19 @@ class DashboardFragment : Fragment(), SensorEventListener {
             val goal = viewModel.userDailyGoal.value ?: 2.0f // 2000ml roughly
 
             // Update Text
-            val percent = (current / goal * 100).toInt()
-            binding.tvProgressInfo.text = "${(current * 1000).toInt()} ml • $percent%"
-            binding.progressBar.progress = percent
+            val currentMl = (current * 1000).toInt()
+            val goalMl = (goal * 1000).toInt()
+            val percent = (current / goal * 100).toInt().coerceIn(0, 100)
+            val remainingMl = (goalMl - currentMl).coerceAtLeast(0)
 
-            // Update Physics Body (0.0 to 1.0)
-            binding.bodyWaterView.setWaterLevel(current / goal)
+            binding.tvProgressInfo.text = "$currentMl ml • $percent%"
+            binding.tvRemaining.text = "Remaining: $remainingMl ml"
+
+            // Update Bubble Progress Bar
+            binding.bubbleProgressBar.setProgress(percent.toFloat())
+
+            // Update Water Body View (0.0 to 1.0)
+            binding.waterBodyView.setWaterLevel(current / goal)
         }
     }
 
@@ -92,18 +100,65 @@ class DashboardFragment : Fragment(), SensorEventListener {
     private fun toggleFabMenu() {
         isMenuOpen = !isMenuOpen
 
+        // Rotate FAB icon (+ to X)
         val rotation = if (isMenuOpen) 45f else 0f
-        binding.fabMain.animate().rotation(rotation).setInterpolator(OvershootInterpolator()).start()
+        binding.fabMain.animate()
+            .rotation(rotation)
+            .setInterpolator(OvershootInterpolator())
+            .setDuration(300)
+            .start()
 
-        binding.layoutFabMenu.visibility = if (isMenuOpen) View.VISIBLE else View.INVISIBLE
+        // Hide history button when menu is open
+        binding.btnHistory.animate()
+            .alpha(if (isMenuOpen) 0f else 1f)
+            .setDuration(200)
+            .start()
 
         if (isMenuOpen) {
-            // Spin out animation
-            binding.fabCup.translationY = 50f
-            binding.fabCup.animate().translationY(0f).rotation(360f).setDuration(300).start()
+            binding.layoutFabMenu.visibility = View.VISIBLE
 
-            binding.fabBottle.translationY = 50f
-            binding.fabBottle.animate().translationY(0f).rotation(360f).setStartDelay(50).setDuration(300).start()
+            // Animate each button with stagger
+            binding.fabGlass.apply {
+                translationY = 50f
+                alpha = 0f
+                animate()
+                    .translationY(0f)
+                    .alpha(1f)
+                    .rotation(360f)
+                    .setDuration(300)
+                    .start()
+            }
+
+            binding.fabCup.apply {
+                translationY = 50f
+                alpha = 0f
+                animate()
+                    .translationY(0f)
+                    .alpha(1f)
+                    .rotation(360f)
+                    .setStartDelay(50)
+                    .setDuration(300)
+                    .start()
+            }
+
+            binding.fabBottle.apply {
+                translationY = 50f
+                alpha = 0f
+                animate()
+                    .translationY(0f)
+                    .alpha(1f)
+                    .rotation(360f)
+                    .setStartDelay(100)
+                    .setDuration(300)
+                    .start()
+            }
+        } else {
+            // Fade out and hide
+            binding.fabGlass.animate().alpha(0f).setDuration(150).start()
+            binding.fabCup.animate().alpha(0f).setDuration(150).start()
+            binding.fabBottle.animate().alpha(0f).setDuration(150).withEndAction {
+                binding.layoutFabMenu.visibility = View.INVISIBLE
+            }.start()
         }
     }
 
@@ -121,8 +176,9 @@ class DashboardFragment : Fragment(), SensorEventListener {
     override fun onSensorChanged(event: SensorEvent?) {
         event?.let {
             // Map Accelerator X (-10 to 10) to rotation angle (-45 to 45)
+            // This creates the horizon stabilization effect
             val angle = it.values[0] * -5
-            binding.bodyWaterView.setTilt(angle)
+            binding.waterBodyView.setTilt(angle)
         }
     }
 

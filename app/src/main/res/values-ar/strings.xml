@@ -1,7 +1,70 @@
 <resources>
     <string name="app_name">الترطيب</string>
     <string name="app_logo">شعار التطبيق</string>
+
+    <!-- Auth -->
+    <string name="login">تسجيل الدخول</string>
+    <string name="sign_up">إنشاء حساب</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="name">الاسم</string>
+    <string name="birthday">تاريخ الميلاد</string>
+    <string name="continue_btn">متابعة</string>
+    <string name="already_have_account">هل لديك حساب بالفعل؟</string>
+    <string name="dont_have_account">ليس لديك حساب؟</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard">لوحة التحكم</string>
     <string name="add_water">إضافة ماء</string>
+    <string name="today">اليوم</string>
+    <string name="consumed">المستهلك</string>
+    <string name="remaining">المتبقي</string>
+    <string name="goal">الهدف</string>
+    <string name="ml">مل</string>
+    <string name="cup">كوب</string>
+    <string name="bottle">زجاجة</string>
+    <string name="glass">كأس</string>
+
+    <!-- Drink Types -->
+    <string name="water">ماء</string>
+    <string name="tea">شاي</string>
+    <string name="coffee">قهوة</string>
+    <string name="juice">عصير</string>
+    <string name="smoothie">سموذي</string>
+    <string name="milk">حليب</string>
+
+    <!-- Statistics -->
+    <string name="statistics">الإحصائيات</string>
+    <string name="daily">يومي</string>
+    <string name="weekly">أسبوعي</string>
+    <string name="monthly">شهري</string>
+    <string name="yearly">سنوي</string>
+    <string name="total">المجموع</string>
+    <string name="avg_daily">المتوسط اليومي</string>
+    <string name="most_logged">الأكثر استهلاكًا</string>
+    <string name="goal_achievement">تحقيق الأهداف</string>
+    <string name="drink_type">نوع المشروب</string>
+    <string name="view_logged">عرض السجل</string>
+
+    <!-- Tips -->
+    <string name="tips">نصائح</string>
+    <string name="hydration_tips">نصائح الترطيب</string>
+
+    <!-- Settings -->
+    <string name="settings">الإعدادات</string>
+    <string name="profile">الملف الشخصي</string>
+    <string name="theme">المظهر</string>
+    <string name="light_mode">الوضع الفاتح</string>
+    <string name="dark_mode">الوضع الداكن</string>
+    <string name="language">اللغة</string>
+    <string name="english">الإنجليزية</string>
+    <string name="french">الفرنسية</string>
+    <string name="arabic">العربية</string>
+    <string name="notifications">الإشعارات</string>
+    <string name="daily_goal_setting">الهدف اليومي</string>
+    <string name="reminder_interval">فترة التذكير</string>
+    <string name="logout">تسجيل الخروج</string>
 
     <!-- Onboarding -->
     <string name="onboarding_title_1">تتبع الترطيب الخاص بك</string>
@@ -13,4 +76,33 @@
     <string name="next">التالي</string>
     <string name="start">ابدأ</string>
     <string name="skip">تخطي</string>
+
+    <!-- Days of Week -->
+    <string name="monday">الإثنين</string>
+    <string name="tuesday">الثلاثاء</string>
+    <string name="wednesday">الأربعاء</string>
+    <string name="thursday">الخميس</string>
+    <string name="friday">الجمعة</string>
+    <string name="saturday">السبت</string>
+    <string name="sunday">الأحد</string>
+
+    <!-- Months -->
+    <string name="january">يناير</string>
+    <string name="february">فبراير</string>
+    <string name="march">مارس</string>
+    <string name="april">أبريل</string>
+    <string name="may">مايو</string>
+    <string name="june">يونيو</string>
+    <string name="july">يوليو</string>
+    <string name="august">أغسطس</string>
+    <string name="september">سبتمبر</string>
+    <string name="october">أكتوبر</string>
+    <string name="november">نوفمبر</string>
+    <string name="december">ديسمبر</string>
+
+    <!-- Messages -->
+    <string name="goal_achieved">تم تحقيق الهدف!</string>
+    <string name="keep_going">استمر!</string>
+    <string name="almost_there">أوشكت على الوصول!</string>
+    <string name="great_job">عمل رائع!</string>
 </resources>

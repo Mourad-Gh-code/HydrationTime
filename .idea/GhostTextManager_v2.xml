@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GhostTextManager">
+    <option name="inputs">
+      <map>
+        <entry key="ERROR: C:\Users\unknown\AndroidStudioProjects\HydrationTime\app\src\main\AndroidManifest.xml:19:9-22:70: AAPT: error: resource style/Theme.HydrationTime.NoActionBar (aka com.example.hydrationtime:style/Theme.HydrationTime.NoActionBar) not found.&#10;Ask Gemini&#10;&#10;ERROR: C:\Users\unknown\AndroidStudioProjects\HydrationTime\app\src\main\AndroidManifest.xml:23:9-26:70: AAPT: error: resource style/Theme.HydrationTime.NoActionBar (aka com.example.hydrationtime:style/Theme.HydrationTime.NoActionBar) not found.&#10;Ask Gemini&#10;&#10;ERROR: C:\Users\unknown\AndroidStudioProjects\HydrationTime\app\src\main\AndroidManifest.xml:37:9-40:70: AAPT: error: resource style/Theme.HydrationTime.NoActionBar (aka com.example.hydrationtime:style/Theme.HydrationTime.NoActionBar) not found.&#10;Ask Gemini&#10;&#10;fix these errors">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1763646579788" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="Fix all the errors in the project">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1763656055423" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="Fix the errors of the project">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1763657303132" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="My application was crush here is the logCat">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1763649175155" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="and as for the login page add also the logo in like the sign up page but without the same functionality (three clicks)&#10;&#10;as for the lines Sign Up / Login i want you add an animation while swiching between sing up and login">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1763648493867" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="continue fixing">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1763656716581" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="fix all the errrors">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1763657429855" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="fix this">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1763646971982" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="fix this errors">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1763657826250" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="grate as for the animatione efect of the body but  you forgot to fix the progress bar beacaus it also when i change and go back to dach board the gas bublles animation efect stops &#10;&#10;and for the reminder sertting&#10;and when i tryed to set a sart time of the reminder notification i didn't receive the notification , i rather dont you use a stat and enda time reminder , just use a normal timing reminder for exemple if set to  recieve  a notifcation in 5:25 pm it should send me a notification in that time or multiple times just like the picture that i've sent you &#10;&#10;i rather you to use  for exemple another fragment jus like the image that i've uploaded to you previously and i want you to &#10;&#10;&#10;and ther is another problem in the graphs in the statics page  &#10;i want to see a dynamic data not static for exemple if consume a dink  it will shos me my  consumation in the graph if not it should show an empty consumation (none )&#10;for exemple (just to explain you the logic)  i consume in this day two times for exemple  at 2 pm and 5pm ehen i ll go to the grap in D section i should see the consomation at 2 and 5 pm and it not show anything in the other hours beacause i didn't consume in theme ,,, if  i cousum  it will show the consumation if i don't i will not">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1763654677675" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="great , but there is an issuie not big is about went i run the up it shows me the dashboard at first withe the water animation efect  untill  here every thing is fine but when i go to another page for exemple statics and when i go back to the dash board the animation it stops &#10;&#10;second issu in the statics page &#10;there is no graph thet shows me the consomation same as allof the D W M Y&#10;i want graphs shows the dayli consumation like n the pictures those i've uploaded to you&#10;&#10;ther is one thing i want you add is under the Dring  type i wnat you show each drink withe its color withe its consumation count and it precentage &#10;&#10;&#10;and i want you add the notification functionalitie for exemple i want to add a section in the setting named Reminder that allow the user chose which to receive a anotification that reminds hime to drink wanter and he can also use or custume his own notification message also add a section that allows the user shose the notification sound from its phone">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1763650763213" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="inhance the desingn of tips by removing the background image gradinent and make it as the other pages's background and fix the that the images of each tip doesn't show up and fix &#10;the the bubble progress bar animation efect becaus when i open the app it works but whent i change and go back to the dashcboeard the bubbles  animation effect stopps &#10;and fix also the graph becaus i when i consume water my today  consomation  wasn't sho up  in the static page and in the graph">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="2.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1763660522955" />
+                  <option value="1763660409275" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="no i want to add &#10; ask the permission of notification wehen the user download the app for the first time beacuse i want wen the user set a reminder it will appear a notification &#10; and  functionalitites in the settings and allso">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1763647853460" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="now i want you  inhance the desing of the tips page like  the other pages">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1763658822610" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+        <entry key="the app was crush her is the logcat :">
+          <value>
+            <GhostTextMetaData>
+              <option name="count" value="1.0" />
+              <option name="timestamps">
+                <list>
+                  <option value="1763648904763" />
+                </list>
+              </option>
+            </GhostTextMetaData>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/water_deep_bg">
+    android:background="?attr/android:windowBackground">
 
     <!-- Date Widget (Top Left) -->
     <LinearLayout
@@ -22,7 +23,7 @@
             android:text="19"
             android:textSize="36sp"
             android:textStyle="bold"
-            android:textColor="@color/white" />
+            android:textColor="?attr/android:textColorPrimary" />
 
         <TextView
             android:id="@+id/tvDayName"
@@ -30,19 +31,32 @@
             android:layout_height="wrap_content"
             android:text="Wednesday"
             android:textSize="16sp"
-            android:textColor="@color/glass_text_secondary" />
+            android:textColor="?attr/android:textColorSecondary" />
     </LinearLayout>
 
-    <!-- Physics Body View (Center) -->
-    <com.example.hydrationtime.ui.components.BodyWaterView
-        android:id="@+id/bodyWaterView"
+    <!-- History Icon (Top Right) -->
+    <ImageButton
+        android:id="@+id/btnHistory"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="24dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_tips"
+        android:contentDescription="@string/view_logged"
+        app:tint="?attr/android:textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Enhanced Water Body View (Center) -->
+    <com.example.hydrationtime.ui.components.WaterBodyView
+        android:id="@+id/waterBodyView"
         android:layout_width="280dp"
         android:layout_height="500dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintVertical_bias="0.35" />
 
     <!-- Progress Info -->
     <TextView
@@ -50,27 +64,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1,420 ml • 73%"
-        android:textColor="@color/white"
+        android:textColor="?attr/android:textColorPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@id/progressBar"
-        app:layout_constraintStart_toStartOf="@id/progressBar" />
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/tvRemaining"
+        app:layout_constraintStart_toStartOf="@id/bubbleProgressBar" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
+    <TextView
+        android:id="@+id/tvRemaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remaining: 520 ml"
+        android:textColor="?attr/android:textColorSecondary"
+        android:textSize="14sp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@id/bubbleProgressBar"
+        app:layout_constraintStart_toStartOf="@id/bubbleProgressBar" />
+
+    <!-- Bubble Progress Bar -->
+    <com.example.hydrationtime.ui.components.BubbleProgressBar
+        android:id="@+id/bubbleProgressBar"
         android:layout_width="0dp"
-        android:layout_height="12dp"
+        android:layout_height="24dp"
         android:layout_marginHorizontal="32dp"
-        android:layout_marginBottom="100dp"
-        android:progressDrawable="@drawable/button_gradient"
-        android:progress="73"
+        android:layout_marginBottom="140dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Fan-out Menu Container (Sub-buttons) -->
+    <!-- Fan-out Menu Container (Drink Options) -->
     <LinearLayout
         android:id="@+id/layoutFabMenu"
         android:layout_width="wrap_content"
@@ -82,20 +105,34 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/fabMain">
 
-        <com.google.android.material.floatingactionbutton.SmallFloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabGlass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_water_drop"
+            android:contentDescription="@string/glass"
+            app:fabSize="mini"
+            app:backgroundTint="@color/drink_water" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabCup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
             android:src="@drawable/ic_water_drop"
-            app:backgroundTint="@color/blue_light" />
+            android:contentDescription="@string/cup"
+            app:fabSize="mini"
+            app:backgroundTint="@color/drink_tea" />
 
-        <com.google.android.material.floatingactionbutton.SmallFloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabBottle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_water_drop"
-            app:backgroundTint="@color/green" />
+            android:contentDescription="@string/bottle"
+            app:fabSize="mini"
+            app:backgroundTint="@color/drink_coffee" />
     </LinearLayout>
 
     <!-- Main FAB -->
@@ -105,6 +142,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
         android:src="@drawable/ic_add"
+        android:contentDescription="@string/add_water"
         app:backgroundTint="@color/blue"
         app:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

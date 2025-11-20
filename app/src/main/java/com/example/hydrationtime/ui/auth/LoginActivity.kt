@@ -36,6 +36,8 @@ class LoginActivity : AppCompatActivity() {
 
         binding.tvSignUp.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
+            // Apply slide animation: current screen slides out to left, new screen slides in from right
+            overridePendingTransition(com.example.hydrationtime.R.anim.slide_in_right, com.example.hydrationtime.R.anim.slide_out_left)
         }
 
         // --- TRIPLE CLICK FEATURE ---
@@ -51,7 +53,7 @@ class LoginActivity : AppCompatActivity() {
 
             if (logoClickCount == 3) {
                 // Auto-fill Magic
-                binding.etEmail.setText("teacher@test.com")
+                binding.etEmail.setText("testuser@hydration.com")
                 binding.etPassword.setText("password123")
                 logoClickCount = 0
                 Toast.makeText(this, "Debug Credentials Filled", Toast.LENGTH_SHORT).show()

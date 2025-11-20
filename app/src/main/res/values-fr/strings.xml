@@ -1,0 +1,108 @@
+<resources>
+    <string name="app_name">Hydratation</string>
+    <string name="app_logo">Logo de l\'application</string>
+
+    <!-- Auth -->
+    <string name="login">Connexion</string>
+    <string name="sign_up">S\'inscrire</string>
+    <string name="email">Email</string>
+    <string name="password">Mot de passe</string>
+    <string name="confirm_password">Confirmer le mot de passe</string>
+    <string name="name">Nom</string>
+    <string name="birthday">Date de naissance</string>
+    <string name="continue_btn">Continuer</string>
+    <string name="already_have_account">Vous avez déjà un compte?</string>
+    <string name="dont_have_account">Vous n\'avez pas de compte?</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard">Tableau de bord</string>
+    <string name="add_water">Ajouter de l\'eau</string>
+    <string name="today">Aujourd\'hui</string>
+    <string name="consumed">Consommé</string>
+    <string name="remaining">Restant</string>
+    <string name="goal">Objectif</string>
+    <string name="ml">ml</string>
+    <string name="cup">Tasse</string>
+    <string name="bottle">Bouteille</string>
+    <string name="glass">Verre</string>
+
+    <!-- Drink Types -->
+    <string name="water">Eau</string>
+    <string name="tea">Thé</string>
+    <string name="coffee">Café</string>
+    <string name="juice">Jus</string>
+    <string name="smoothie">Smoothie</string>
+    <string name="milk">Lait</string>
+
+    <!-- Statistics -->
+    <string name="statistics">Statistiques</string>
+    <string name="daily">Quotidien</string>
+    <string name="weekly">Hebdomadaire</string>
+    <string name="monthly">Mensuel</string>
+    <string name="yearly">Annuel</string>
+    <string name="total">Total</string>
+    <string name="avg_daily">Moyenne quotidienne</string>
+    <string name="most_logged">Plus consommé</string>
+    <string name="goal_achievement">Objectifs atteints</string>
+    <string name="drink_type">Type de boisson</string>
+    <string name="view_logged">Voir l\'historique</string>
+
+    <!-- Tips -->
+    <string name="tips">Conseils</string>
+    <string name="hydration_tips">Conseils d\'hydratation</string>
+
+    <!-- Settings -->
+    <string name="settings">Paramètres</string>
+    <string name="profile">Profil</string>
+    <string name="theme">Thème</string>
+    <string name="light_mode">Mode clair</string>
+    <string name="dark_mode">Mode sombre</string>
+    <string name="language">Langue</string>
+    <string name="english">Anglais</string>
+    <string name="french">Français</string>
+    <string name="arabic">Arabe</string>
+    <string name="notifications">Notifications</string>
+    <string name="daily_goal_setting">Objectif quotidien</string>
+    <string name="reminder_interval">Intervalle de rappel</string>
+    <string name="logout">Déconnexion</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">Suivez votre hydratation</string>
+    <string name="onboarding_description_1">Enregistrez facilement votre consommation d\'eau quotidienne</string>
+    <string name="onboarding_title_2">Définissez vos objectifs</string>
+    <string name="onboarding_description_2">Créez des objectifs personnalisés pour rester hydraté</string>
+    <string name="onboarding_title_3">Recevez des rappels</string>
+    <string name="onboarding_description_3">Des notifications pour vous rappeler de boire de l\'eau</string>
+    <string name="next">Suivant</string>
+    <string name="start">Commencer</string>
+    <string name="skip">Passer</string>
+
+    <!-- Days of Week -->
+    <string name="monday">Lundi</string>
+    <string name="tuesday">Mardi</string>
+    <string name="wednesday">Mercredi</string>
+    <string name="thursday">Jeudi</string>
+    <string name="friday">Vendredi</string>
+    <string name="saturday">Samedi</string>
+    <string name="sunday">Dimanche</string>
+
+    <!-- Months -->
+    <string name="january">Janvier</string>
+    <string name="february">Février</string>
+    <string name="march">Mars</string>
+    <string name="april">Avril</string>
+    <string name="may">Mai</string>
+    <string name="june">Juin</string>
+    <string name="july">Juillet</string>
+    <string name="august">Août</string>
+    <string name="september">Septembre</string>
+    <string name="october">Octobre</string>
+    <string name="november">Novembre</string>
+    <string name="december">Décembre</string>
+
+    <!-- Messages -->
+    <string name="goal_achieved">Objectif atteint!</string>
+    <string name="keep_going">Continuez!</string>
+    <string name="almost_there">Presque là!</string>
+    <string name="great_job">Excellent travail!</string>
+</resources>

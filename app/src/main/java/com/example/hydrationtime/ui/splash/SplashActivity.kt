@@ -25,22 +25,25 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Animation de chargement
+        // Animation de chargement (fade in then fade out)
         startLoadingAnimation()
-
-        // Délai de 2 secondes puis navigation
-        Handler(Looper.getMainLooper()).postDelayed({
-            navigateToNextScreen()
-        }, 2000)
     }
 
     private fun startLoadingAnimation() {
-        // Animation du logo
+        // Fade in animation for logo
         binding.logoImageView.apply {
             alpha = 0f
+            scaleX = 0.8f
+            scaleY = 0.8f
             animate()
                 .alpha(1f)
-                .setDuration(1000)
+                .scaleX(1f)
+                .scaleY(1f)
+                .setDuration(800)
+                .withEndAction {
+                    // Start fade out after fade in completes
+                    startFadeOutAnimation()
+                }
                 .start()
         }
 
@@ -51,10 +54,32 @@ class SplashActivity : AppCompatActivity() {
             animate()
                 .alpha(1f)
                 .translationY(0f)
-                .setDuration(1000)
-                .setStartDelay(300)
+                .setDuration(800)
+                .setStartDelay(200)
                 .start()
         }
+    }
+
+    private fun startFadeOutAnimation() {
+        // Fade out animation for logo
+        binding.logoImageView.animate()
+            .alpha(0f)
+            .scaleX(0.5f)
+            .scaleY(0.5f)
+            .setDuration(600)
+            .setStartDelay(800)
+            .start()
+
+        // Fade out animation for text
+        binding.appNameTextView.animate()
+            .alpha(0f)
+            .translationY(-30f)
+            .setDuration(600)
+            .setStartDelay(800)
+            .withEndAction {
+                navigateToNextScreen()
+            }
+            .start()
     }
 
     private fun navigateToNextScreen() {
@@ -77,6 +102,7 @@ class SplashActivity : AppCompatActivity() {
         }
 
         startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         finish()
     }
 }

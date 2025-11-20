@@ -2,25 +2,16 @@ package com.example.hydrationtime.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.hydrationtime.R
 import com.example.hydrationtime.databinding.ActivityMainBinding
-import com.google.android.material.tabs.TabLayoutMediator
-
 
 /**
- * MainActivity - Activité principale avec 4 onglets
+ * MainActivity - Main activity with bottom navigation
  */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
-    private val tabTitles = listOf("Tableau de bord", "Objectifs", "Conseils", "Mon compte")
-    private val tabIcons = listOf(
-        R.drawable.ic_dashboard,
-        R.drawable.ic_goals,
-        R.drawable.ic_tips,
-        R.drawable.ic_profile
-    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,19 +19,43 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupViewPager()
+        setupBottomNavigation()
     }
 
     private fun setupViewPager() {
         val adapter = ViewPagerAdapter(this)
         binding.viewPager.adapter = adapter
+        binding.viewPager.isUserInputEnabled = false // Disable swipe
+    }
 
-        // Désactiver le swipe si nécessaire
-        binding.viewPager.isUserInputEnabled = true
+    private fun setupBottomNavigation() {
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_dashboard -> {
+                    binding.viewPager.currentItem = 0
+                    true
+                }
+                R.id.nav_statistics -> {
+                    binding.viewPager.currentItem = 1
+                    true
+                }
+                R.id.nav_tips -> {
+                    binding.viewPager.currentItem = 2
+                    true
+                }
+                R.id.nav_settings -> {
+                    binding.viewPager.currentItem = 3
+                    true
+                }
+                else -> false
+            }
+        }
 
-        // Lier TabLayout avec ViewPager2
-        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
-            tab.text = tabTitles[position]
-            tab.setIcon(tabIcons[position])
-        }.attach()
+        // Sync ViewPager with BottomNavigation
+        binding.viewPager.registerOnPageChangeCallback(object : androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                binding.bottomNavigation.menu.getItem(position).isChecked = true
+            }
+        })
     }
 }

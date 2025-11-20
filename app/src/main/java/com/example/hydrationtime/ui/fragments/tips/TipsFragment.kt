@@ -52,24 +52,47 @@ class TipsFragment : Fragment() {
     private fun getTipsList(): List<HydrationTip> {
         return listOf(
             HydrationTip(
-                R.drawable.ic_water_drop, // Using default icon if specific drawable missing
+                R.drawable.morining_drink,
                 "Buvez dès le matin",
-                "Commencez votre journée avec un grand verre d'eau.",
+                "Commencez votre journée avec un grand verre d'eau pour réveiller votre métabolisme et réhydrater votre corps.",
                 "https://www.healthline.com/nutrition/drinking-water-in-the-morning"
             ),
             HydrationTip(
-                R.drawable.ic_water_drop,
-                "Mangez des fruits",
-                "Les fruits comme la pastèque aident à l'hydratation.",
+                R.drawable.fruits,
+                "Mangez des fruits hydratants",
+                "Les fruits comme la pastèque, le concombre et les agrumes contiennent plus de 90% d'eau et contribuent à votre hydratation.",
                 "https://www.medicalnewstoday.com/articles/325958"
             ),
             HydrationTip(
-                R.drawable.ic_water_drop,
+                R.drawable.dink_before,
+                "Buvez avant les repas",
+                "Boire un verre d'eau 30 minutes avant les repas peut améliorer la digestion et vous aider à mieux réguler votre appétit.",
+                "https://www.healthline.com/nutrition/drinking-water-before-meals"
+            ),
+            HydrationTip(
+                R.drawable.eight,
+                "Suivez la règle 8x8",
+                "Essayez de boire 8 verres de 250ml d'eau par jour. C'est une bonne base pour rester hydraté, mais ajustez selon vos besoins.",
+                "https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/water/art-20044256"
+            ),
+            HydrationTip(
+                R.drawable.spots,
+                "Hydratez-vous pendant l'exercice",
+                "Buvez de l'eau avant, pendant et après l'exercice. Pour une activité intense, prévoyez 200-300ml toutes les 15-20 minutes.",
+                "https://www.healthline.com/nutrition/how-much-water-should-you-drink-per-day"
+            ),
+            HydrationTip(
+                R.drawable.chaud,
+                "Attention par temps chaud",
+                "Augmentez votre consommation d'eau lorsqu'il fait chaud ou que vous transpirez davantage pour compenser les pertes.",
+                "https://www.cdc.gov/healthywater/drinking/nutrition/index.html"
+            ),
+            HydrationTip(
+                R.drawable.neccessary,
                 "Importance de l'hydratation",
-                "Pourquoi est-il si important de boire de l'eau ?",
-                "https://www.youtube.com/watch?v=9iMGFqMmUFs" // Video link
+                "L'eau régule votre température, transporte les nutriments et aide à éliminer les toxines. Découvrez tous ses bienfaits !",
+                "https://www.youtube.com/watch?v=9iMGFqMmUFs"
             )
-            // Add more tips as needed
         )
     }
 
