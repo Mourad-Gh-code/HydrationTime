@@ -2,7 +2,9 @@ package com.example.hydrationtime.data.local.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.google.android.gms.fitness.data.Goal
+// [FIX] Removed the incorrect Google Fit import
+import com.example.hydrationtime.data.local.entities.Goal
+
 /**
  * GoalDao - Opérations sur la table goals
  */

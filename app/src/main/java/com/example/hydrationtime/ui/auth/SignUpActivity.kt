@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.example.hydrationtime.databinding.ActivitySignUpBinding // [FIX] Correct Import
 import com.example.hydrationtime.ui.main.MainActivity
 import com.example.hydrationtime.utils.DateUtils
 import java.util.*
@@ -16,13 +17,15 @@ import java.util.*
  */
 class SignUpActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivitySignupBinding
+    // [FIX] Changed ActivitySignupBinding to ActivitySignUpBinding
+    private lateinit var binding: ActivitySignUpBinding
     private val viewModel: AuthViewModel by viewModels()
     private var selectedBirthdayTimestamp: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySignupBinding.inflate(layoutInflater)
+        // [FIX] Changed to ActivitySignUpBinding
+        binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setupUI()

@@ -2,17 +2,14 @@ package com.example.hydrationtime.ui.onboarding
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.hydrationtime.R
 import com.example.hydrationtime.databinding.ActivityOnboardingBinding
-import com.example.hydrationtime.databinding.ItemOnboardingBinding
 import com.example.hydrationtime.ui.auth.LoginActivity
 import com.example.hydrationtime.utils.Constants
+
 
 /**
  * OnboardingActivity - Affiche les 3 pages d'introduction
@@ -24,19 +21,22 @@ class OnboardingActivity : AppCompatActivity() {
 
     private val onboardingPages = listOf(
         OnboardingPage(
-            R.drawable.onboarding_1,
-            getString(R.string.onboarding_title_1),
-            getString(R.string.onboarding_description_1)
+            R.drawable.ic_water_drop_large,
+            // Note: Make sure these strings exist in your strings.xml
+            "Suivez votre hydratation",
+            "Enregistrez facilement votre consommation d'eau quotidienne"
         ),
         OnboardingPage(
-            R.drawable.onboarding_2,
-            getString(R.string.onboarding_title_2),
-            getString(R.string.onboarding_description_2)
+            // [FIX] Changed missing 'onboarding_2' to existing 'ic_goals'
+            R.drawable.ic_goals,
+            "Définissez vos objectifs",
+            "Créez des objectifs personnalisés pour rester hydraté"
         ),
         OnboardingPage(
-            R.drawable.onboarding_3,
-            getString(R.string.onboarding_title_3),
-            getString(R.string.onboarding_description_3)
+            // [FIX] Changed missing 'onboarding_3' to existing 'ic_notifications'
+            R.drawable.ic_notifications,
+            "Recevez des rappels",
+            "Des notifications pour vous rappeler de boire de l'eau"
         )
     )
 
@@ -52,7 +52,9 @@ class OnboardingActivity : AppCompatActivity() {
     private fun setupViewPager() {
         onboardingAdapter = OnboardingAdapter(onboardingPages)
         binding.viewPager.adapter = onboardingAdapter
-        binding.dotsIndicator.setViewPager2(binding.viewPager)
+
+        // [FIX] Use attachTo() instead of setViewPager2() for DotsIndicator v5.0
+        binding.dotsIndicator.attachTo(binding.viewPager)
 
         binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {

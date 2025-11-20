@@ -5,8 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.hydrationtime.data.local.dao.*
-import com.example.hydrationtime.data.local.entities.*
-import com.google.firebase.firestore.auth.User
+import com.example.hydrationtime.data.local.entities.* // [FIX] DELETE THIS LINE: import com.google.firebase.firestore.auth.User
 
 /**
  * Base de données Room principale
