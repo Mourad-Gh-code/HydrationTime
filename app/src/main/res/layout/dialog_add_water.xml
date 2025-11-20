@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quantité d'eau (L)"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etWaterAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:text="0.25" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Boutons rapides -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantités rapides :"
+        android:textSize="14sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip250ml"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.25L"
+            android:layout_marginEnd="8dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip500ml"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.5L"
+            android:layout_marginEnd="8dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip1000ml"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1L" />
+    </LinearLayout>
+
+</LinearLayout>

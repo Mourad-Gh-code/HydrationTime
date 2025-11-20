@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1061123236252",
+    "project_id": "h2otime",
+    "storage_bucket": "h2otime.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061123236252:android:6096cf961d831480362859",
+        "android_client_info": {
+          "package_name": "com.example.hydrationtime"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACYV0aYqz_NJBvNM8woBcMF_lIyqZRKQk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

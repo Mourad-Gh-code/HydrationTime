@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">الترطيب</string>
+    <string name="app_logo">شعار التطبيق</string>
+    <string name="add_water">إضافة ماء</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">تتبع الترطيب الخاص بك</string>
+    <string name="onboarding_description_1">سجل بسهولة استهلاكك اليومي من الماء</string>
+    <string name="onboarding_title_2">حدد أهدافك</string>
+    <string name="onboarding_description_2">أنشئ أهدافًا مخصصة للبقاء رطبًا</string>
+    <string name="onboarding_title_3">احصل على تذكيرات</string>
+    <string name="onboarding_description_3">إشعارات لتذكيرك بشرب الماء</string>
+    <string name="next">التالي</string>
+    <string name="start">ابدأ</string>
+    <string name="skip">تخطي</string>
+</resources>

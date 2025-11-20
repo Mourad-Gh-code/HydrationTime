@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Hydration</string>
+    <string name="app_logo">App logo</string>
+    <string name="add_water">Add water</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">Track your hydration</string>
+    <string name="onboarding_description_1">Easily record your daily water intake</string>
+    <string name="onboarding_title_2">Set your goals</string>
+    <string name="onboarding_description_2">Create personalized goals to stay hydrated</string>
+    <string name="onboarding_title_3">Get reminders</string>
+    <string name="onboarding_description_3">Notifications to remind you to drink water</string>
+    <string name="next">Next</string>
+    <string name="start">Start</string>
+    <string name="skip">Skip</string>
+</resources>
